@@ -14,28 +14,28 @@
     <ul>
         <!-- <li class="{$page.url.pathname === '/' ? 'has-background-primary has-text-black' : ''}"> -->
         <li>
-            <a href="/">
+            <a href="{base}/">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiHomeHeart} size=48></SvgIcon>
                 </span>
             </a>
         </li>
         <li>
-            <a href="/map">
+            <a href="{base}/map">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiMapClockOutline} size=48></SvgIcon>
                 </span>
             </a>
         </li>
         <li>
-            <a href="/gallery">
+            <a href="{base}/gallery">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiImageMultiple} size=48></SvgIcon>
                 </span>
             </a>
         </li>
         <li>
-            <a href="/contact">
+            <a href="{base}/contact">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiCardAccountPhone} size=48></SvgIcon>
                 </span>
@@ -51,6 +51,7 @@
     import SvgIcon from '@jamescoyle/svelte-icon';
     import { mdiHomeHeart, mdiMapClockOutline, mdiImageMultiple, mdiCardAccountPhone } from '@mdi/js';
     import { page } from '$app/stores';
+    import { base } from '$app/paths';
 </script>
 
 <style>
