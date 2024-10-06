@@ -8,6 +8,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,8 +28,7 @@ jobs:
           npm run build
       
       - uses: peaceiris/actions-gh-pages@v4
-        permissions:
-          contents: write
+        
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
