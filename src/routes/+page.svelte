@@ -2,7 +2,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="이요한/김보배의 결혼식에 초대합니다." />
     <meta property="og:description" content="2025년 5월 3일 오후 2시, 건대 스타시티아트홀" />
-    <meta property="og:image" content="{assets}/thumbnail.jpg" />
+    <meta property="og:image" content="https://mobknight.github.io/wedding-invitation/thumbnail.jpg" />
 </svelte:head>
 
 
@@ -22,6 +22,5 @@
 </section>
 
 <script>
-    import { assets } from '$app/paths';
     import main_photo from '$lib/images/paris-047.png'
 </script>
