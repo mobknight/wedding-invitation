@@ -41,7 +41,7 @@
         {#each gallery as image}
             <swiper-slide>
                 <figure class="image is-square">
-                    <enhanced:img src="{image}" alt="John and Bobae" loading="lazy"/>
+                    <enhanced:img src="{image}" alt="John and Bobae"/>
                 </figure>
             </swiper-slide>
         {/each}
