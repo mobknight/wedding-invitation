@@ -17,13 +17,6 @@
                 </span>
             </a>
         </div>
-        <div class="column is-narrow">
-            <a href="https://ig.me/speeding.tendancy">
-                <span class="icon is-medium">
-                    <SvgIcon type="mdi" path={mdiInstagram} size=48></SvgIcon>
-                </span>
-            </a>
-        </div>
     </div>
 </div>
 <div class="block pr-5 mr-5">

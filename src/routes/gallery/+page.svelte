@@ -49,17 +49,6 @@
     </swiper-container>
 </div>
 
-<!-- <div class="m-5">
-    <video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'>
-        <source src={bg_movie} type="video/mp4" />
-    </video>
-</div>
-
-<script>
-    import bg_movie from '$lib/movies/bg.mp4'
-</script> -->
-
-
 <div class="modal {modal_active ? 'is-active' : ''}">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -75,6 +64,18 @@
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <button class="modal-close is-large" aria-label="close" on:click={() => {modal_active = false}}></button>
 </div>
+
+<!-- <div class="m-5">
+    <video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'>
+        <source src={bg_movie} type="video/mp4" />
+    </video>
+</div>
+
+<script>
+    import bg_movie from '$lib/movies/bg.mp4'
+</script> -->
+
+
 
 <script>
     //@ts-nocheck

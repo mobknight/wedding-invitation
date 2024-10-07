@@ -21548,6 +21548,12 @@ has-background-danger.is-hoverable:active {
 }
 
 @font-face {
+  font-family: "RIDIBatang";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: "KoPubWorldBatang";
   font-weight: 300;
   font-style: normal;
