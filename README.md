@@ -17,8 +17,23 @@ npm run build-bulma
 네이버 지도 SDK는 npm install 할 수 있는게 타입스크립트밖에 없다. 타입스크립트는 싫다. 그래서 자바스크립트 SDK를 `<script src=...>`로 가져오고 Docs에 나오는 대로 코딩했더니, 콘솔에 `naver is not defined` 에러 로그가 뜬다. 외부 js 라이브러리 로드 끝나기도 전에 `new naver.maps.` 하는 부분이 실행되고 있으니 그렇지. `<script src=... on:load={() => {loaded = true}}>`를 주고, `loaded == true`일 때 map DOM을 렌더링하고 네이버 지도 설정 관련 함수를 실행하도록 바꿨다. 그래도 문제가 생겨서 찾아보니 이 부분도 어싱크라서 map DOM이 그려지기 전에 함수를 실행하고 있더라. 그래서 지도 설정 함수를 async로 바꾸고, 맨 앞에 `await tick()`을 추가했다.
 
 ```js
-import { tick } from 'svelte';
-await tick();
+<svelte:head>
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=..." on:load={() => {loaded = true}}></script>
+</svelte:head>
+
+<script>
+    $: {
+        if (loaded) {
+            drawMap();
+        }
+    }
+
+    import { tick } from 'svelte';
+    async function drawMap() {
+        await tick();
+        ...
+    }
+</script>
 ```
 
 `await tick()`은 스벨트에서 변수 변화에 따른 화면 재구성이 끝날 때까지 기다리는 함수다. 이거 넣고 해결했다.
@@ -30,4 +45,13 @@ await tick();
 `Swiper`를 사용해서 Carousel 형태의 메인 사진 + 썸네일을 만들고, 클릭시 modal도 구현했다. CSS 때문에 너무 고생했다. 아직도 div 내 컴포넌트에 대한 세로 정렬은 너무 힘들다. CSS 라이브러리 걷어치울까 하는 생각을 몇 번이나 했는데, 결국 parent 쪽에 `height: auto; width: auto; max-height: 100%; max-width: 100%` 넣고, figure에는 ratio 명시하고(`is-2by3`), img에는 `object-fit: scale-down;` 넣는 걸로 해결했다.
 
 dev에서는 문제가 없었는데, 빌드/배포하고 나서 보니 갤러리 내 이미지가 전혀 안 뜬다. 원인은 `import.meta.glob` 부분이었는데, Vite에서 이미지를 말면서 파일명에 hash를 집어넣는 문제 + 디렉토리 맘대로 바꾸는 문제 때문에 `import.meta.glob`으로 가져온 어레이 내 파일명과 빌드된 파일명이 전부 다른 상황이 나온다. vite config에서 rollup option을 바꿔도, sveltekit에서 이 옵션을 오버라이드하기 때문에 해결할 수 없다. 이건 https://kit.svelte.dev/docs/images#sveltejs-enhanced-img 를 적용해서 해결했는데, 빌드시 enhanced img에서 어차피 파일명을 다 바꾸면서 다중 파일을 생성하고 코드를 그에 맞게 적절히 바꿔주는 듯.
+
+```js
+<enhanced:img src="...">
+```
+
+
+### 카카오톡 미리보기
+카톡 미리보기는 html 헤더에 `<meta og:...>` 태그들을 달아 놓고 카카오톡 봇이 캐싱해 가기를 기다리는 방식인데, 이걸 스벨트 컴포넌트 안쪽에 `<svelte:head>`로 넣어 놓았더니 안 된다. 빌드/배포한 후 `curl` 때려 보면 301 Redirect가 뜬다. `curl -L`로 쫓아가 보면, `app.html`에 들어가 있던 내용만 로드하고 body 부분은 스벨트킷에서 스크립트를 통해 추가 로딩하는 형태로 구현되어 있는 것을 확인할 수 있다. 때문에 카카오톡 봇이 메타정보를 가져갈 수 없었던 듯. `og` 헤더는 `app.html` 안에 넣는 걸로 변경하면 금방 해결됨.
+
 

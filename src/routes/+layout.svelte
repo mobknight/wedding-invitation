@@ -1,9 +1,8 @@
 
-<div class="has-background-white bg">
 
-</div>
 
-<div class="has-background-white has-text-centered">
+<div class="container is-max-desktop has-background-white has-text-centered">
+    <div class="has-background-white bg"></div>
     <slot />
 
     <div class="invisible-footer"></div>

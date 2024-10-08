@@ -2,6 +2,9 @@
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijycvnx5y2" on:load={() => {loaded = true}}></script>
 </svelte:head>
 
+<div class="pt-3">
+    <p class="is-size-5">장소 및 시간</p>
+</div>
 
 {#if loaded}
     <div class="cotainer p-5">
@@ -9,19 +12,32 @@
     </div>
 {/if}
 
+<div>
+    <a class="button" href="https://kko.to/N7V8xgtX9M" style="background-color:#FAE100;" target="_blank">
+        <figure class="image is-48x48">
+            <img src={kakao_map_icon} alt=""/>
+        </figure>
+    </a>
+    <a class="button" href="https://maps.app.goo.gl/hJ3aLVPu8kiC3N2q9" target="_blank">
+        <figure class="image is-48x48">
+            <img src={google_map_icon} alt=""/>
+        </figure>
+    </a>
+    
+    <a class="button" href="https://naver.me/FO9ftPQv" target="_blank">
+        <figure class="image is-48x48">
+            <img src={naver_map_icon} alt=""/>
+        </figure>
+    </a>
+    <a class="button" href="https://tmap.life/f871c0f5" target="_blank">
+        <figure class="image is-48x48">
+            <img src={tmap_icon} alt=""/>
+        </figure>
+    </a>
+</div>
 
-<a class="button" href="https://naver.me/FO9ftPQv" target="_blank">
-    <figure class="image is-64x64">
-        <img src={naver_map_icon} alt=""/>
-    </figure>
-</a>
 
-<a class="button" href="https://tmap.life/f871c0f5" target="_blank">
-    <figure class="image is-64x64">
-        <img src={tmap_icon} alt=""/>
-    </figure>
-</a>
-        
+
         
 
 <script>
@@ -29,6 +45,8 @@
     import { tick } from 'svelte'
     import tmap_icon from '$lib/images/tmap.svg'
     import naver_map_icon from '$lib/images/naver_map.webp'
+    import kakao_map_icon from '$lib/images/kakao_map.webp'
+    import google_map_icon from '$lib/images/google_map.webp'
 
     let loaded = false;
     let map;
@@ -62,7 +80,7 @@
             '   <h5>스타시티아트홀</h5>',
             '   <p>서울 광진구 능동로 110 스타시티 영존 5층<p>',
             '   <a href="https://starcityarthall.com/36" target="_blank">https://startcityhall.com</a>',
-            '</div><div><div>'
+            '</div></div></div>'
         ].join('');
 
         infoWindow = new naver.maps.InfoWindow({
