@@ -1,9 +1,10 @@
-<div class="container p-5 is-fullwidth">
+<div class="container p-5 is-fullwidth animate__animated animate__slideInDown">
     <swiper-container
         class="gallery-main"
         thumbs-swiper=".gallery-thumbs"
         slides-per-view={1}
         space-between={1}
+        lazy-preload-prev-next={1}
         breakPoints={{
             1024: {
                 slidesPerView: 3,
@@ -17,12 +18,13 @@
                 <figure class="image is-2by3 main-picture is-flex is-align-items-center is-justify-content-center" on:click={() => {galleryClickHandler(image)}}>
                     <enhanced:img src="{image}" alt="John and Bobae" style="object-fit: scale-down;" loading="lazy"/>
                 </figure>
+                <div class="swiper-lazy-preloader"></div>
             </swiper-slide>
         {/each}
     </swiper-container>
 </div>
 
-<div class="container pt-2 pr-5 pl-5 pb-2 thumbs has-background-white">
+<div class="container pt-2 pr-5 pl-5 pb-2 thumbs has-background-white animate__animated animate__slideInUp">
     <swiper-container
         class="gallery-thumbs"
         slides-per-view={5}
@@ -31,6 +33,7 @@
         watch-slides-visibility={true}
         watch-slides-progress={true}
         free-mode={true}
+        lazy-preload-prev-next={5}
         breakpoints={{
             1024: {
                 slidesPerView: 11,
@@ -41,8 +44,9 @@
         {#each gallery as image}
             <swiper-slide>
                 <figure class="image is-square">
-                    <enhanced:img src="{image}" alt="John and Bobae"/>
+                    <enhanced:img src="{image}" alt="John and Bobae" loading="lazy"/>
                 </figure>
+                <div class="swiper-lazy-preloader"></div>
             </swiper-slide>
         {/each}
 
@@ -85,15 +89,8 @@
             enhanced: true
         }
     });
-    // const images = import.meta.glob("/gallery/*.jpg");
 
     let gallery = [];
-
-    // for (const path in images) {
-    //     images[path]().then((url) => {
-    //         gallery = [...gallery, path]
-    //     });
-    // }
 
     Object.values(images).forEach((v) => {
         gallery = [...gallery, v.default];
@@ -103,11 +100,6 @@
     import { register } from 'swiper/element/bundle'
     register();
     
-    // const onSlideChange = (e) => {
-    //     console.log('slide changed');
-    //     console.log(e)
-    // }
-
     let modal_active;
     let selected_image;
 

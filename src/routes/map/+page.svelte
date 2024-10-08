@@ -13,7 +13,7 @@
 {/if}
 
 <div>
-    <a class="button" href="https://kko.to/N7V8xgtX9M" style="background-color:#FAE100;" target="_blank">
+    <a class="button" href="https://kko.to/Kw91W2O8AF" style="background-color:#FAE100;" target="_blank">
         <figure class="image is-48x48">
             <img src={kakao_map_icon} alt=""/>
         </figure>
