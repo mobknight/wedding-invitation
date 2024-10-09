@@ -2,40 +2,78 @@
     <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=ijycvnx5y2" on:load={() => {loaded = true}}></script>
 </svelte:head>
 
-<div class="pt-3">
-    <p class="is-size-5">장소 및 시간</p>
-</div>
-
-{#if loaded}
-    <div class="cotainer p-5">
-        <div class="animate__animated animate__fadeInDown" id="map" style="width: 100%; height: 400px;"></div>
+<div class="container p-5">
+    <div class="content has-text-right is-large">
+        스타시티아트홀
+        <p class="is-size-6">서울 광진구 능동로 110 스타시티 영존 5층</p>
     </div>
-{/if}
 
-<div>
-    <a class="button" href="https://kko.to/Kw91W2O8AF" style="background-color:#FAE100;" target="_blank">
-        <figure class="image is-48x48">
-            <img src={kakao_map_icon} alt=""/>
-        </figure>
-    </a>
-    <a class="button" href="https://maps.app.goo.gl/hJ3aLVPu8kiC3N2q9" target="_blank">
-        <figure class="image is-48x48">
-            <img src={google_map_icon} alt=""/>
-        </figure>
-    </a>
-    
-    <a class="button" href="https://naver.me/FO9ftPQv" target="_blank">
-        <figure class="image is-48x48">
-            <img src={naver_map_icon} alt=""/>
-        </figure>
-    </a>
-    <a class="button" href="https://tmap.life/f871c0f5" target="_blank">
-        <figure class="image is-48x48">
-            <img src={tmap_icon} alt=""/>
-        </figure>
-    </a>
+    {#if loaded}
+        <div id="map" style="width: 100%; height: 400px;"></div>
+    {/if}
+
+    <div class="pt-5">
+        <a class="button" href="https://kko.to/Kw91W2O8AF" style="background-color:#FAE100;" target="_blank">
+            <figure class="image is-48x48">
+                <img src={kakao_map_icon} alt=""/>
+            </figure>
+        </a>
+        <a class="button" href="https://maps.app.goo.gl/hJ3aLVPu8kiC3N2q9" target="_blank">
+            <figure class="image is-48x48">
+                <img src={google_map_icon} alt=""/>
+            </figure>
+        </a>
+        
+        <a class="button" href="https://naver.me/FO9ftPQv" target="_blank">
+            <figure class="image is-48x48">
+                <img src={naver_map_icon} alt=""/>
+            </figure>
+        </a>
+        <a class="button" href="https://tmap.life/f871c0f5" target="_blank">
+            <figure class="image is-48x48">
+                <img src={tmap_icon} alt=""/>
+            </figure>
+        </a>
+    </div>
 </div>
 
+<hr>
+
+<div class="container p-5">
+
+    <div class="content has-text-right is-large">
+        2025년 5월 3일 토요일
+        <p class="is-size-6">오후 2시</p>
+    </div>
+    
+
+    <table class="table is-fullwidth has-background-white">
+        <thead class="has-text-centered">
+            <tr>
+                <th>일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
+            </tr>
+        </thead>
+        <tbody>
+            {#each calendar_data as week}
+                <tr>
+                    {#each week as day}
+                        {#if day === 3}
+                            <td class="has-background-primary has-text-white">{day}</td>
+                        {:else}
+                            <td>{day}</td>
+                        {/if}
+                    {/each}
+                </tr>
+            {/each}
+        </tbody>
+    </table>
+</div>
 
 
         
@@ -63,7 +101,6 @@
 
     async function drawMap() {
         await tick();
-        console.log('Tick complete. Requesting Map');
         
         map = new naver.maps.Map('map', {
                 center: new naver.maps.LatLng(37.5408014, 127.071374),
@@ -96,4 +133,57 @@
         })
     }
 
+
+    // Calendar
+
+    const calendar_data = setCalendarSet(2025, 5, 3);
+        
+    function setCalendarSet(year, month, targetDate) {
+        const numberOfDays = new Date(year, month, 0).getDate();
+        let str_month;
+
+        if (month.toString().length < 2) {
+            str_month = '0' + month;
+        } else {
+            str_month = month.toString();
+        }
+        const firstDay = new Date(year + '-' + str_month + '-01');
+        const firstDOW = firstDay.getDay();
+                
+        let currentDate = 1;
+
+        let weeks = [[]];
+
+        for (let i = 0; i < firstDOW; i++) {
+            weeks[0].push('');
+        }
+
+        for (let i = firstDOW; i < 7; i++) {
+            weeks[0].push(currentDate);
+            currentDate++;
+        }
+
+        let newWeek = [];
+        for (let i = currentDate; i <= numberOfDays; i++) {
+            newWeek.push(currentDate);
+            currentDate++;
+
+            if (newWeek.length >= 7) {
+                weeks.push(newWeek);
+                newWeek = [];
+            }
+        }
+
+        // put last week in, if any remaining days
+        if (newWeek.length > 0) {
+            for (let i = newWeek.length; i < 7; i++) {
+                newWeek.push('');
+            }
+            weeks.push(newWeek);
+        }
+        
+        return weeks;
+    }
+
 </script>
+
