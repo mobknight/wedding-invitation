@@ -14,23 +14,23 @@
 
     <div class="pt-5">
         <a class="button" href="https://kko.to/Kw91W2O8AF" style="background-color:#FAE100;" target="_blank">
-            <figure class="image is-24x24">
+            <figure class="image is-32x32">
                 <img src={kakao_map_icon} alt=""/>
             </figure>
         </a>
         <a class="button" href="https://maps.app.goo.gl/hJ3aLVPu8kiC3N2q9" style="background-color:#FFFFFF;" target="_blank">
-            <figure class="image is-24x24">
+            <figure class="image is-32x32">
                 <img src={google_map_icon} alt=""/>
             </figure>
         </a>
         
         <a class="button" href="https://naver.me/FO9ftPQv" style="background-color:#FFFFFF;" target="_blank">
-            <figure class="image is-24x24">
+            <figure class="image is-32x32">
                 <img src={naver_map_icon} alt=""/>
             </figure>
         </a>
         <a class="button" href="https://tmap.life/f871c0f5" style="background-color:#FFFFFF;" target="_blank">
-            <figure class="image is-24x24">
+            <figure class="image is-32x32">
                 <img src={tmap_icon} alt=""/>
             </figure>
         </a>
