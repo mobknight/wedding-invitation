@@ -1,6 +1,4 @@
-<div class="container">
 
-</div>
 <div class="content">
     <figure class="image is-3by2">
         <img src={main_photo} alt="John and Bobae"/>
@@ -15,6 +13,7 @@
 <script>
     // @ts-nocheck
     import main_photo from '$lib/images/paris-047.png'
+    
 
     const today = new Date().setHours(0, 0, 0);
     const d_day = new Date('2025-05-03');
@@ -71,4 +70,5 @@
     .animate__fadeInUp {
         --animate-delay: 0.4s;
     }
+
 </style>

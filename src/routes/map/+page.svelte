@@ -37,7 +37,7 @@
     </div>
 </div>
 
-<hr>
+<!-- <hr> -->
 
 <div class="container p-5">
 

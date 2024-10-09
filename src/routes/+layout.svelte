@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="tabs is-fullwidth is-medium has-background-link main_menu">
+<div class="tabs is-fullwidth is-small has-background-link main_menu">
     <ul>
         <!-- <li class="{$page.url.pathname === '/' ? 'has-background-primary has-text-black' : ''}"> -->
         <li>
@@ -40,6 +40,16 @@
                 </span>
             </a>
         </li>
+        <li>
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a>
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <!-- svelte-ignore a11y-no-static-element-interactions -->
+                <span class="icon is-medium share" on:click={share}>
+                    <SvgIcon type="mdi" path={mdiShareVariantOutline} size=48></SvgIcon>
+                </span>
+            </a>
+        </li>
     </ul>
 </div>
 
@@ -48,9 +58,21 @@
 <script>
 // @ts-nocheck
     import SvgIcon from '@jamescoyle/svelte-icon';
-    import { mdiHomeHeart, mdiMapClockOutline, mdiImageMultiple, mdiCardAccountPhone } from '@mdi/js';
+    import { mdiHomeHeart, mdiMapClockOutline, mdiImageMultiple, mdiCardAccountPhone, mdiShareVariantOutline } from '@mdi/js';
     import { page } from '$app/stores';
     import { base } from '$app/paths';
+
+    function share() {
+        if (navigator.share) {
+            navigator.share({
+                title: "이요한/김보배의 결혼식에 초대합니다.",
+                text: "2025년 5월 3일 토요일, 건대 스타시티아트홀",
+                url: "https://mobknight.github.io/wedding-invitation"
+            });
+        } else {
+            console.log('Web Share API error');
+        }
+    }
 </script>
 
 <style>
