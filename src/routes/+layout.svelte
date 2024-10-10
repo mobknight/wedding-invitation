@@ -63,14 +63,28 @@
     import { base } from '$app/paths';
 
     function share() {
+        const target_url = 'https://mobknight.github.io/wedding-invitation'
+        const title = '이요한/김보배의 결혼식에 초대합니다.'
+        const text = '2025년 5월 3일 토요일, 건대 스타시티아트홀'
+
         if (navigator.share) {
             navigator.share({
-                title: "이요한/김보배의 결혼식에 초대합니다.",
-                text: "2025년 5월 3일 토요일, 건대 스타시티아트홀",
-                url: "https://mobknight.github.io/wedding-invitation"
+                title: title,
+                text: text,
+                url: target_url
             });
         } else {
-            console.log('Web Share API error');
+            import('https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js').then((sdk) => {
+                Kakao.init('05f251792f6c66dc1711334f4f179773');
+                Kakao.Share.sendDefault({
+                    objectType: "text",
+                    text: target_url,
+                    link: {
+                        mobileWebUrl: target_url,
+                        webUrl: target_url,
+                    }
+                })
+            })
         }
     }
 </script>
