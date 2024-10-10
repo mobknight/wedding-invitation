@@ -79,12 +79,17 @@
             });
         } else {
             Kakao.Share.sendDefault({
-                objectType: "text",
-                text: target_url,
-                link: {
-                    mobileWebUrl: target_url,
-                    webUrl: target_url,
+                objectType: "feed",
+                content: {
+                    title: title,
+                    description: text,
+                    image_url: "https://mobknight.github.io/wedding-invitation/thumbnail.png",
+                    link: {
+                        mobileWebUrl: target_url,
+                        webUrl: target_url,
+                    }
                 }
+                
             });
         }
     }
