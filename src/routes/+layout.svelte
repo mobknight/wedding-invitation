@@ -62,6 +62,10 @@
     import { page } from '$app/stores';
     import { base } from '$app/paths';
 
+    import('https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js').then((sdk) => {
+        Kakao.init('05f251792f6c66dc1711334f4f179773');
+    });
+
     function share() {
         const target_url = 'https://mobknight.github.io/wedding-invitation'
         const title = '이요한/김보배의 결혼식에 초대합니다.'
@@ -74,17 +78,14 @@
                 url: target_url
             });
         } else {
-            import('https://t1.kakaocdn.net/kakao_js_sdk/2.7.2/kakao.min.js').then((sdk) => {
-                Kakao.init('05f251792f6c66dc1711334f4f179773');
-                Kakao.Share.sendDefault({
-                    objectType: "text",
-                    text: target_url,
-                    link: {
-                        mobileWebUrl: target_url,
-                        webUrl: target_url,
-                    }
-                })
-            })
+            Kakao.Share.sendDefault({
+                objectType: "text",
+                text: target_url,
+                link: {
+                    mobileWebUrl: target_url,
+                    webUrl: target_url,
+                }
+            });
         }
     }
 </script>
