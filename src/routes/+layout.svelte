@@ -69,7 +69,7 @@
     function share() {
         const target_url = 'https://mobknight.github.io/wedding-invitation'
         const title = '이요한/김보배의 결혼식에 초대합니다.'
-        const text = '2025년 5월 3일 토요일, 건대 스타시티아트홀'
+        const text = '2025년 5월 3일 토요일 오후 2시, 건대 스타시티아트홀'
 
         if (navigator.share) {
             navigator.share({
@@ -83,7 +83,7 @@
                 content: {
                     title: title,
                     description: text,
-                    image_url: "https://mobknight.github.io/wedding-invitation/thumbnail.png",
+                    imageUrl: "https://mobknight.github.io/wedding-invitation/thumbnail.jpg",
                     link: {
                         mobileWebUrl: target_url,
                         webUrl: target_url,
