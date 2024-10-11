@@ -1,13 +1,13 @@
 
 <div class="content">
-    <figure class="image is-3by2">
+    <figure class="image is-3by2 animate__animated animate__fadeInUp">
         <img src={main_photo} alt="John and Bobae"/>
     </figure>
 
-    <h1 class="animate__animated animate__fadeInUp">이요한 + 김보배</h1>
-    <p class="animate__animated animate__fadeInUp animate__delay-1s">2025년 5월 3일 토요일 오후 2시</p>
-    <p class="animate__animated animate__fadeInUp animate__delay-2s">건대 스타시티아트홀</p>
-    <p class="animate__animated animate__fadeInUp animate__delay-3s">D<strong>{days_sign}{dd}</strong></p>
+    <h1 class="animate__animated animate__fadeInUp animate__delay-1s">이요한 + 김보배</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-2s">2025년 5월 3일 토요일 오후 2시</p>
+    <p class="animate__animated animate__fadeInUp animate__delay-3s">건대 스타시티아트홀</p>
+    <p class="animate__animated animate__fadeInUp animate__delay-4s" on:animationstart={runCounter}>D<strong>{days_sign}{dd}</strong></p>
 </div>
 
 <script>
@@ -21,13 +21,16 @@
     const days_until = Math.abs(Math.floor((d_day - today) / (1000 * 60 * 60 * 24)));
     
     let dd;
-    if (d_day >= today) {
-        countDown(2764, days_until);
-    } else {
-        countUp(days_until);
+    // runCounter();
+
+    function runCounter() {
+        if (d_day >= today) {
+            countDown(2764, days_until);
+        } else {
+            countUp(days_until);
+        }
     }
     
-
     function countDown(from, to) {
         dd = from;
         const max = from - to;
@@ -40,10 +43,10 @@
             if (now < 1) {
                 clearInterval(interval)
             }
-            
+
             const step = now / 10;
             now -= step;
-        }, 50);
+        }, 40);
     }
 
     function countUp(to) {
@@ -61,14 +64,14 @@
 
             const step = now / 10;
             now -= step;
-        }, 50);
+        }, 40);
     }
 
 </script>
 
 <style>
     .animate__fadeInUp {
-        --animate-delay: 0.4s;
+        --animate-delay: 0.7s;
     }
 
 </style>
