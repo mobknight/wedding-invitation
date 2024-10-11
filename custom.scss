@@ -22,7 +22,7 @@ $latte: #A38F85;
     font-family: 'KoPubWorldBatang';
     font-weight: 300;
     font-style: normal;
-    src: url('./KoPubWorldBatangLight.woff2');
+    src: url('$lib/fonts/KoPubWorldBatangLight.woff2');
     font-display: swap;
 }
 
@@ -30,7 +30,7 @@ $latte: #A38F85;
     font-family: 'KoPubWorldBatang';
     font-weight: 500;
     font-style: normal;
-    src: url('./KoPubWorldBatangMedium.woff2');
+    src: url('$lib/fonts/KoPubWorldBatangMedium.woff2');
     font-display: swap;
 }
 
@@ -38,6 +38,6 @@ $latte: #A38F85;
     font-family: 'KoPubWorldBatang';
     font-weight: 700;
     font-style: normal;
-    src: url('./KoPubWorldBatangBold.woff2');
+    src: url('$lib/fonts/KoPubWorldBatangBold.woff2');
     font-display: swap;
 }
