@@ -5,7 +5,7 @@
     </figure>
 
     <h1 class="animate__animated animate__fadeInUp animate__delay-1s">이요한 + 김보배</h1>
-    <p class="animate__animated animate__fadeInUp animate__delay-2s">2025년 5월 3일 토요일 오후 2시</p>
+    <p class="animate__animated animate__fadeInUp animate__delay-2s">2025년 5월 3일 토요일 오후 2시 40분</p>
     <p class="animate__animated animate__fadeInUp animate__delay-3s">건대 스타시티아트홀</p>
     <p class="animate__animated animate__fadeInUp animate__delay-4s" on:animationstart={runCounter}>D<strong>{days_sign}{dd}</strong></p>
 </div>

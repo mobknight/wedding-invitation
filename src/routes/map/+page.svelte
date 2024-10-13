@@ -6,7 +6,7 @@
 
     <div class="content has-text-right is-large">
         2025년 5월 3일 토요일
-        <p class="is-size-6">오후 2시</p>
+        <p class="is-size-6">오후 2시 40분</p>
     </div>
     
 
