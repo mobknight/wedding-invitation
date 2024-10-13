@@ -3,43 +3,6 @@
 </svelte:head>
 
 <div class="container p-5">
-    <div class="content has-text-right is-large">
-        스타시티아트홀
-        <p class="is-size-6">서울 광진구 능동로 110 스타시티 영존 5층</p>
-    </div>
-
-    {#if loaded}
-        <div id="map" style="width: 100%; height: 300px;"></div>
-    {/if}
-
-    <div class="pt-5">
-        <a class="button" href="https://kko.to/Kw91W2O8AF" style="background-color:#FAE100;" target="_blank">
-            <figure class="image is-32x32">
-                <img src={kakao_map_icon} alt=""/>
-            </figure>
-        </a>
-        <a class="button" href="https://maps.app.goo.gl/hJ3aLVPu8kiC3N2q9" style="background-color:#FFFFFF;" target="_blank">
-            <figure class="image is-32x32">
-                <img src={google_map_icon} alt=""/>
-            </figure>
-        </a>
-        
-        <a class="button" href="https://naver.me/FO9ftPQv" style="background-color:#FFFFFF;" target="_blank">
-            <figure class="image is-32x32">
-                <img src={naver_map_icon} alt=""/>
-            </figure>
-        </a>
-        <a class="button" href="https://tmap.life/f871c0f5" style="background-color:#FFFFFF;" target="_blank">
-            <figure class="image is-32x32">
-                <img src={tmap_icon} alt=""/>
-            </figure>
-        </a>
-    </div>
-</div>
-
-<!-- <hr> -->
-
-<div class="container p-5">
 
     <div class="content has-text-right is-large">
         2025년 5월 3일 토요일
@@ -74,6 +37,66 @@
         </tbody>
     </table>
 </div>
+
+<div class="container p-5">
+    <div class="content has-text-right is-large">
+        스타시티아트홀
+        <p class="is-size-6">서울 광진구 능동로 110 스타시티 영존 5층</p>
+    </div>
+
+    {#if loaded}
+        <div id="map" style="width: 100%; height: 300px;"></div>
+    {/if}
+
+    <div class="p-3">
+        <a class="button" href="https://kko.to/Kw91W2O8AF" style="background-color:#FAE100;" target="_blank">
+            <figure class="image is-32x32">
+                <img src={kakao_map_icon} alt=""/>
+            </figure>
+        </a>
+        <a class="button" href="https://maps.app.goo.gl/hJ3aLVPu8kiC3N2q9" style="background-color:#FFFFFF;" target="_blank">
+            <figure class="image is-32x32">
+                <img src={google_map_icon} alt=""/>
+            </figure>
+        </a>
+        
+        <a class="button" href="https://naver.me/FO9ftPQv" style="background-color:#FFFFFF;" target="_blank">
+            <figure class="image is-32x32">
+                <img src={naver_map_icon} alt=""/>
+            </figure>
+        </a>
+        <a class="button" href="https://tmap.life/f871c0f5" style="background-color:#FFFFFF;" target="_blank">
+            <figure class="image is-32x32">
+                <img src={tmap_icon} alt=""/>
+            </figure>
+        </a>
+    </div>
+
+    <div class="box has-background-white">
+        <div class="content has-text-left">
+            <h4>지하철</h4>
+            <p>2호선 / 7호선 건대입구역 3번 출구 앞</p>
+            <h4>버스</h4>
+            <p>건대입구역, 건대입구역 사거리 하차</p>
+            <ul>
+                <li>
+                    간선: 240, 721
+                </li>
+                <li>
+                    지선: 2016, 2222, 3217, 3220, 4212
+                </li>
+                <li>
+                    직행: 102, 3500
+                </li>
+                <li>
+                    공항: 6013
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- <hr> -->
 
 
         
