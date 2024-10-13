@@ -52,7 +52,11 @@
         </div>
         <div class="column is-narrow">
             <button class="button" on:click={() => {copyToClipboard('토스뱅크 1000-0610-6759')}}>계좌번호 복사하기</button>
-            <a class="button" href="https://link.kakaopay.com/_/fq5Dm59" target="_blank">카카오페이</a>
+            <a class="button" href="https://link.kakaopay.com/_/fq5Dm59" target="_blank" style="background-color:#FAE100;">
+                <figure class="image">
+                    <img src={kakaopay} alt="" style="height:1.5rem;"/>
+                </figure>
+            </a>
         </div>
     </div>
     <div class="columns is-mobile">
@@ -61,7 +65,11 @@
         </div>
         <div class="column is-narrow">
             <button class="button" on:click={() => {copyToClipboard('토스뱅크 1000-0740-3010')}}>계좌번호 복사하기</button>
-            <a class="button" href="https://link.kakaopay.com/_/yqJaIoR" target="_blank">카카오페이</a>
+            <a class="button" href="https://link.kakaopay.com/_/yqJaIoR" target="_blank" style="background-color:#FAE100;">
+                <figure class="image">
+                    <img src={kakaopay} alt="" style="height:1.5rem;"/>
+                </figure>
+            </a>
         </div>
     </div>
 </div>
@@ -77,6 +85,7 @@
     import SvgIcon from '@jamescoyle/svelte-icon';
     import { mdiPhone, mdiMessageProcessing, mdiInstagram } from '@mdi/js';
     import Message from '$lib/components/Message.svelte';
+    import kakaopay from '$lib/images/kakaopay.svg'
 
     const phone_number_groom = '010-3692-5521'
     const phone_number_bride = '010-9908-7299'

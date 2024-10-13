@@ -10,6 +10,14 @@
     <p class="animate__animated animate__fadeInUp animate__delay-4s" on:animationstart={runCounter}>D<strong>{days_sign}{dd}</strong></p>
 </div>
 
+<footer class="footer has-background-white">
+    <div class="content has-text-centered animate__animated animate__fadeInUp animate__delay-5s">
+        <p>
+            Handmade by John Lee
+        </p>
+    </div>
+</footer>
+
 <script>
     // @ts-nocheck
     import main_photo from '$lib/images/paris-047.png'
@@ -72,6 +80,10 @@
 <style>
     .animate__fadeInUp {
         --animate-delay: 0.7s;
+    }
+
+    .footer {
+        font-family: 'Cafe24Lovingu';
     }
 
 </style>
