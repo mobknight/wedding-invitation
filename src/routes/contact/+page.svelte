@@ -51,10 +51,10 @@
             <span class="is-size-4">신랑</span>
         </div>
         <div class="column is-narrow">
-            <button class="button" on:click={() => {copyToClipboard('토스뱅크 1000-0610-6759')}}>계좌번호 복사하기</button>
+            <button class="button" on:click={() => {copyToClipboard('토스뱅크 1000-0610-6759')}}>계좌번호 복사</button>
             <a class="button" href="https://link.kakaopay.com/_/fq5Dm59" target="_blank" style="background-color:#FAE100;">
                 <figure class="image">
-                    <img src={kakaopay} alt="" style="height:1.5rem;"/>
+                    <img src={kakaopay} alt="" style="height:1.5rem; width:4rem;"/>
                 </figure>
             </a>
         </div>
@@ -64,10 +64,10 @@
             <span class="is-size-4">신부</span>
         </div>
         <div class="column is-narrow">
-            <button class="button" on:click={() => {copyToClipboard('토스뱅크 1000-0740-3010')}}>계좌번호 복사하기</button>
+            <button class="button" on:click={() => {copyToClipboard('토스뱅크 1000-0740-3010')}}>계좌번호 복사</button>
             <a class="button" href="https://link.kakaopay.com/_/yqJaIoR" target="_blank" style="background-color:#FAE100;">
                 <figure class="image">
-                    <img src={kakaopay} alt="" style="height:1.5rem;"/>
+                    <img src={kakaopay} alt="" style="height:1.5rem; width:4rem;"/>
                 </figure>
             </a>
         </div>
