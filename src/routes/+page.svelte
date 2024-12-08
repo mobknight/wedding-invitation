@@ -20,7 +20,7 @@
 
 <script>
     // @ts-nocheck
-    import main_photo from '$lib/images/paris-047.png'
+    import main_photo from '$lib/images/paris-047.webp'
     
 
     const today = new Date().setHours(0, 0, 0);
