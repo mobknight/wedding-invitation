@@ -1,13 +1,21 @@
 
 <div class="content">
-    <figure class="image is-3by2 animate__animated animate__fadeInUp">
+    <figure class="image is-3by2 animate__animated animate__fadeIn">
         <img src={main_photo} alt="John and Bobae"/>
     </figure>
 
-    <h1 class="animate__animated animate__fadeInUp animate__delay-1s">이요한 + 김보배</h1>
-    <p class="animate__animated animate__fadeInUp animate__delay-2s">2025년 5월 3일 토요일 오후 2시 40분</p>
-    <p class="animate__animated animate__fadeInUp animate__delay-3s">건대 스타시티아트홀</p>
-    <p class="animate__animated animate__fadeInUp animate__delay-4s" on:animationstart={runCounter}>D<strong>{days_sign}{dd}</strong></p>
+    <h1 class="animate__animated animate__fadeInUp">이요한 + 김보배</h1>
+    <p class="animate__animated animate__fadeInUp animate__delay-1s">2025년 5월 3일 토요일 오후 2시 40분</p>
+    <p class="animate__animated animate__fadeInUp animate__delay-2s">건대 스타시티아트홀</p>
+    <p class="animate__animated animate__fadeInUp animate__delay-3s" on:animationstart={runCounter}>D<strong>{days_sign}{dd}</strong></p>
+</div>
+
+<div class="share">
+    <p class="animate__animated animate__fadeInUp animate__delay-4s">
+    <button class="button" on:click={share}>
+            모바일 청첩장 공유하기
+    </button>
+    </p>
 </div>
 
 <footer class="footer has-background-white">
@@ -21,7 +29,6 @@
 <script>
     // @ts-nocheck
     import main_photo from '$lib/images/paris-047.webp'
-    
 
     const today = new Date().setHours(0, 0, 0);
     const d_day = new Date('2025-05-03');
@@ -73,6 +80,35 @@
             const step = now / 10;
             now -= step;
         }, 40);
+    }
+
+    
+    function share() {
+        const target_url = 'https://mobknight.github.io/wedding-invitation'
+        const title = '이요한/김보배의 결혼식에 초대합니다.'
+        const text = '2025년 5월 3일 토요일 오후 2시 40분, 건대 스타시티아트홀'
+
+        if (navigator.share) {
+            navigator.share({
+                title: title,
+                text: text,
+                url: target_url
+            });
+        } else {
+            Kakao.Share.sendDefault({
+                objectType: "feed",
+                content: {
+                    title: title,
+                    description: text,
+                    imageUrl: "https://mobknight.github.io/wedding-invitation/thumbnail.jpg",
+                    link: {
+                        mobileWebUrl: target_url,
+                        webUrl: target_url,
+                    }
+                }
+                
+            });
+        }
     }
 
 </script>

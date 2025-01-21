@@ -17,6 +17,7 @@
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiHomeHeart} size=48></SvgIcon>
                 </span>
+                <span>홈</span>
             </a>
         </li>
         <li>
@@ -24,6 +25,7 @@
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiMapClockOutline} size=48></SvgIcon>
                 </span>
+                <span>위치</span>
             </a>
         </li>
         <li>
@@ -31,6 +33,7 @@
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiImageMultiple} size=48></SvgIcon>
                 </span>
+                <span>사진</span>
             </a>
         </li>
         <li>
@@ -38,18 +41,16 @@
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiCardAccountPhone} size=48></SvgIcon>
                 </span>
+                <span>연락</span>
             </a>
         </li>
-        <li>
-            <!-- svelte-ignore a11y-missing-attribute -->
+        <!-- <li>
             <a>
-                <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <!-- svelte-ignore a11y-no-static-element-interactions -->
                 <span class="icon is-medium share" on:click={share}>
                     <SvgIcon type="mdi" path={mdiShareVariantOutline} size=48></SvgIcon>
                 </span>
             </a>
-        </li>
+        </li> -->
     </ul>
 </div>
 
@@ -66,33 +67,6 @@
         Kakao.init('05f251792f6c66dc1711334f4f179773');
     });
 
-    function share() {
-        const target_url = 'https://mobknight.github.io/wedding-invitation'
-        const title = '이요한/김보배의 결혼식에 초대합니다.'
-        const text = '2025년 5월 3일 토요일 오후 2시 40분, 건대 스타시티아트홀'
-
-        if (navigator.share) {
-            navigator.share({
-                title: title,
-                text: text,
-                url: target_url
-            });
-        } else {
-            Kakao.Share.sendDefault({
-                objectType: "feed",
-                content: {
-                    title: title,
-                    description: text,
-                    imageUrl: "https://mobknight.github.io/wedding-invitation/thumbnail.jpg",
-                    link: {
-                        mobileWebUrl: target_url,
-                        webUrl: target_url,
-                    }
-                }
-                
-            });
-        }
-    }
 </script>
 
 <style>
