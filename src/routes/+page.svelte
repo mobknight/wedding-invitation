@@ -18,7 +18,14 @@
     </p>
 </div>
 
+<div class="content">
+    
+</div>
+
+
 <footer class="footer has-background-white">
+    <a href="{base}/unused">Move to movie background page</a>
+
     <div class="content has-text-centered animate__animated animate__fadeInUp animate__delay-5s">
         <p>
             Handmade by John Lee
@@ -29,6 +36,7 @@
 <script>
     // @ts-nocheck
     import main_photo from '$lib/images/paris-047.webp'
+    import { base } from '$app/paths';
 
     const today = new Date().setHours(0, 0, 0);
     const d_day = new Date('2025-05-03');
