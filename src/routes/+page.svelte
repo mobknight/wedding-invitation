@@ -12,11 +12,8 @@
 <div class="block" style="padding-right: 2rem;">
     <div class="content has-text-white has-text-right">
         <br>
-        <!-- <h4 class="animate__animated animate__fadeInUp has-text-centered has-text-white" on:animationstart={runCounter}>이요한 김보배 | D<strong class="has-text-white">{days_sign}{dd}</strong></h4> -->
         <h1 class="animate__animated animate__fadeInUp has-text-white">WEDDING<br>DAY</h1>
-    
         <br><br>
-        <!-- <p class="animate__animated animate__fadeInUp has-text-white">이요한 + 김보배</p> -->
         <p class="animate__animated animate__fadeInUp animate__delay-1s">2025년 5월 3일 토요일<br>오후 2시 40분</p>
         <p class="animate__animated animate__fadeInUp animate__delay-2s">건대 스타시티아트홀</p>
     </div>

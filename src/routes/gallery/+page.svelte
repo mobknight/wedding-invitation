@@ -69,17 +69,6 @@
     <button class="modal-close is-large" aria-label="close" on:click={() => {modal_active = false}}></button>
 </div>
 
-<!-- <div class="m-5">
-    <video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'>
-        <source src={bg_movie} type="video/mp4" />
-    </video>
-</div>
-
-<script>
-    import bg_movie from '$lib/movies/bg.mp4'
-</script> -->
-
-
 
 <script>
     //@ts-nocheck

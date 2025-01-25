@@ -1,6 +1,4 @@
 
-
-
 <div class="container is-max-desktop has-background-white has-text-centered">
     <div class="has-background-white bg"></div>
     <slot />
@@ -8,8 +6,6 @@
     <div class="invisible-footer"></div>
 </div>
 
-
-<!-- <div class="tabs is-fullwidth is-small main_menu" style="background: linear-gradient(transparent, #01070A);"> -->
 <div class="tabs is-fullwidth is-small {$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? '' : 'has-background-white'} main_menu" style="{$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? 'background: linear-gradient(transparent, #01070A);' : ''}">
     <ul>
         <!-- <li class="{$page.url.pathname === '/' ? 'has-background-primary has-text-black' : ''}"> -->
@@ -45,13 +41,6 @@
                 <span>연락</span>
             </a>
         </li>
-        <!-- <li>
-            <a>
-                <span class="icon is-medium share" on:click={share}>
-                    <SvgIcon type="mdi" path={mdiShareVariantOutline} size=48></SvgIcon>
-                </span>
-            </a>
-        </li> -->
     </ul>
 </div>
 
