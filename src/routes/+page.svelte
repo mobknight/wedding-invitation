@@ -1,42 +1,47 @@
+<!-- <video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'> -->
+<!-- svelte-ignore a11y-media-has-caption -->
+<video class="bg-video-content" autoplay loop playsinline preload='auto'>
+    <source src={bg_movie} type="video/mp4" />
+</video>
 
-<div class="content">
-    <figure class="image is-3by2 animate__animated animate__fadeIn">
-        <img src={main_photo} alt="John and Bobae"/>
-    </figure>
+<div class="content has-text-white has-text-centered">
+    <br>
+    <p class="animate__animated animate__fadeInUp" on:animationstart={runCounter}>이요한 김보배 | D<strong class="has-text-white">{days_sign}{dd}</strong></p>
+</div>
 
-    <h1 class="animate__animated animate__fadeInUp">이요한 + 김보배</h1>
-    <p class="animate__animated animate__fadeInUp animate__delay-1s">2025년 5월 3일 토요일 오후 2시 40분</p>
-    <p class="animate__animated animate__fadeInUp animate__delay-2s">건대 스타시티아트홀</p>
-    <p class="animate__animated animate__fadeInUp animate__delay-3s" on:animationstart={runCounter}>D<strong>{days_sign}{dd}</strong></p>
+<div class="block" style="padding-right: 2rem;">
+    <div class="content has-text-white has-text-right">
+        <br>
+        <!-- <h4 class="animate__animated animate__fadeInUp has-text-centered has-text-white" on:animationstart={runCounter}>이요한 김보배 | D<strong class="has-text-white">{days_sign}{dd}</strong></h4> -->
+        <h1 class="animate__animated animate__fadeInUp has-text-white">WEDDING<br>DAY</h1>
+    
+        <br><br>
+        <!-- <p class="animate__animated animate__fadeInUp has-text-white">이요한 + 김보배</p> -->
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">2025년 5월 3일 토요일<br>오후 2시 40분</p>
+        <p class="animate__animated animate__fadeInUp animate__delay-2s">건대 스타시티아트홀</p>
+    </div>
 </div>
 
 <div class="share">
-    <p class="animate__animated animate__fadeInUp animate__delay-4s">
+    <p class="animate__animated animate__fadeInUp animate__delay-3s">
     <button class="button" on:click={share}>
-            모바일 청첩장 공유하기
+            청첩장 공유하기
     </button>
     </p>
 </div>
 
-<div class="content">
-    
-</div>
-
-
-<footer class="footer has-background-white">
-    <a href="{base}/unused">Move to movie background page</a>
-
-    <div class="content has-text-centered animate__animated animate__fadeInUp animate__delay-5s">
+<footer class="footer has-background-white handwritten">
+    <div class="content has-text-centered animate__animated animate__fadeInUp animate__delay-4s">
         <p>
             Handmade by John Lee
         </p>
     </div>
 </footer>
 
+
 <script>
     // @ts-nocheck
-    import main_photo from '$lib/images/paris-047.webp'
-    import { base } from '$app/paths';
+    import bg_movie from '$lib/movies/bg.mp4'
 
     const today = new Date().setHours(0, 0, 0);
     const d_day = new Date('2025-05-03');
@@ -126,8 +131,23 @@
         --animate-delay: 0.7s;
     }
 
-    .footer {
+    .handwritten {
         font-family: 'Cafe24Lovingu';
+    }
+
+    .bg-video-content {
+        left: 0;
+        top: 0;
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        z-index: 0;
+    }
+
+    .share {
+        position: fixed;
+        left: 2rem;
+        top: calc(100% - 8rem);
     }
 
 </style>

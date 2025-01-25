@@ -4,13 +4,30 @@ $dusty_rose: #D4B2A7;
 $stone: #CDC6C3;
 $latte: #A38F85;
 
+$blackish: #01070A;
+$darkblue: #46656F;
+$bluish: #8FABB7;
+$silverish: #D8DFE5;
+$whitish: #FBFBFB;
 
+
+// @use 'bulma/sass' with (
+//     $white: $ivory,
+//     $grey-dark: $latte,
+//     $link: $stone,
+//     $primary: $dusty_rose,
+
+//     $table-cell-text-align: center,
+
+//     $family-primary: '"KoPubWorldBatang"'
+// );
 
 @use 'bulma/sass' with (
-    $white: $ivory,
-    $grey-dark: $latte,
-    $link: $stone,
-    $primary: $dusty_rose,
+    $white: $whitish,
+    $grey-dark: $darkblue,
+    $link: $silverish,
+    $primary: $bluish,
+    $black: $blackish,
 
     $table-cell-text-align: center,
 
