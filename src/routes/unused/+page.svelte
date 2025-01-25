@@ -1,16 +1,18 @@
-<video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'>
+<!-- <video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'> -->
+<!-- svelte-ignore a11y-media-has-caption -->
+<video class="bg-video-content" autoplay loop playsinline preload='auto'>
     <source src={bg_movie} type="video/mp4" />
 </video>
 
-<div class="block">
-    <div class="content has-text-white has-text-centered">
+<div class="block" style="padding-right: 30px;">
+    <div class="content has-text-white has-text-right">
         <br>
-        <h4 class="animate__animated animate__fadeInUp has-text-centered has-text-white" on:animationstart={runCounter}>D<strong class="has-text-white">{days_sign}{dd}</strong></h4>
+        <h4 class="animate__animated animate__fadeInUp has-text-centered has-text-white" on:animationstart={runCounter}>이요한 김보배 | D<strong class="has-text-white">{days_sign}{dd}</strong></h4>
         <h1 class="animate__animated animate__fadeInUp has-text-white">WEDDING<br>DAY</h1>
     
         <br><br>
-        <p class="animate__animated animate__fadeInUp has-text-white">이요한 + 김보배</p>
-        <p class="animate__animated animate__fadeInUp animate__delay-1s">2025년 5월 3일 토요일 오후 2시 40분</p>
+        <!-- <p class="animate__animated animate__fadeInUp has-text-white">이요한 + 김보배</p> -->
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">2025년 5월 3일 토요일<br>오후 2시 40분</p>
         <p class="animate__animated animate__fadeInUp animate__delay-2s">건대 스타시티아트홀</p>
     
         <div class="share">
@@ -35,7 +37,7 @@
 
 <script>
     // @ts-nocheck
-    import bg_movie from '$lib/movies/bg2.mp4'
+    import bg_movie from '$lib/movies/bg.mp4'
 
     const today = new Date().setHours(0, 0, 0);
     const d_day = new Date('2025-05-03');
