@@ -10,11 +10,11 @@
 
 
 <!-- <div class="tabs is-fullwidth is-small main_menu" style="background: linear-gradient(transparent, #01070A);"> -->
-<div class="tabs is-fullwidth is-small {$page.url.pathname === '/' ? '' : 'has-background-white'} main_menu" style="{$page.url.pathname === '/' ? 'background: linear-gradient(transparent, #01070A);' : ''}">
+<div class="tabs is-fullwidth is-small {$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? '' : 'has-background-white'} main_menu" style="{$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? 'background: linear-gradient(transparent, #01070A);' : ''}">
     <ul>
         <!-- <li class="{$page.url.pathname === '/' ? 'has-background-primary has-text-black' : ''}"> -->
         <li>
-            <a href="{base}/" class="{$page.url.pathname === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
+            <a href="{base}/" class="{$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiHomeHeart} size=48></SvgIcon>
                 </span>
@@ -22,7 +22,7 @@
             </a>
         </li>
         <li>
-            <a href="{base}/map" class="{$page.url.pathname === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
+            <a href="{base}/map" class="{$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiMapClockOutline} size=48></SvgIcon>
                 </span>
@@ -30,7 +30,7 @@
             </a>
         </li>
         <li>
-            <a href="{base}/gallery" class="{$page.url.pathname === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
+            <a href="{base}/gallery" class="{$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiImageMultiple} size=48></SvgIcon>
                 </span>
@@ -38,7 +38,7 @@
             </a>
         </li>
         <li>
-            <a href="{base}/contact" class="{$page.url.pathname === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
+            <a href="{base}/contact" class="{$page.url.pathname.substr($page.url.pathname.lastIndexOf('/')) === '/' ? 'has-text-link' : 'has-text-grey-dark'}">
                 <span class="icon is-medium">
                     <SvgIcon type="mdi" path={mdiCardAccountPhone} size=48></SvgIcon>
                 </span>
