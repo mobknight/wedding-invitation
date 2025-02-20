@@ -1,6 +1,6 @@
 <!-- <video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'> -->
 <!-- svelte-ignore a11y-media-has-caption -->
-<video class="bg-video-content" autoplay loop playsinline preload='auto'>
+<video class="bg-video-content" autoplay loop playsinline muted defaultmuted preload='auto'>
     <source src={bg_movie} type="video/mp4" />
 </video>
 
