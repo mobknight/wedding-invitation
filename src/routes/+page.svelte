@@ -1,6 +1,6 @@
 <!-- <video class="bg-video-content" autoplay muted loop defaultmuted playsinline preload='auto'> -->
 <!-- svelte-ignore a11y-media-has-caption -->
-<video class="bg-video-content" autoplay loop playsinline muted defaultmuted preload='auto'>
+<video class="bg-video-content" autoplay loop playsinline muted={unmuted ? null : 'muted'} defaultmuted preload='auto' on:click={toggle_mute}>
     <source src={bg_movie} type="video/mp4" />
 </video>
 
@@ -45,6 +45,8 @@
     const days_sign = (d_day >= today) ? '-' : '+';
     const days_until = Math.abs(Math.floor((d_day - today) / (1000 * 60 * 60 * 24)));
     
+    let unmuted;
+
     let dd;
     // runCounter();
 
@@ -119,6 +121,10 @@
                 
             });
         }
+    }
+
+    function toggle_mute() {
+        unmuted = !unmuted;
     }
 
 </script>
