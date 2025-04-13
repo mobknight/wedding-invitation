@@ -98,6 +98,18 @@
 
 <!-- <hr> -->
 
+<div class="container p-5">
+
+    <div class="content has-text-right is-large">
+        포토부스 사용 안내
+        <p class="is-size-6">결혼식장 입구에 포토부스가 설치되어 있습니다.</p>
+    </div>
+
+    <figure class="image">
+        <img src={photo_booth} alt=""/>
+    </figure>
+</div>
+
 
         
 
@@ -108,6 +120,7 @@
     import naver_map_icon from '$lib/images/naver_map.webp'
     import kakao_map_icon from '$lib/images/kakao_map.webp'
     import google_map_icon from '$lib/images/google_map.webp'
+    import photo_booth from '$lib/images/photo_booth.jpg'
 
     let loaded = false;
     let map;
