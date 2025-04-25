@@ -106,6 +106,8 @@
 {#if show_message}
     <Message on:disappear={() => {show_message = false}}>
         {message}
+        <br/>
+        <span class="is-size-7">{message2}</span>
     </Message>
 {/if}
 
@@ -123,11 +125,13 @@
     const phone_number_bride_mom = '010-8834-5286'
 
     let message;
+    let message2;
     let show_message;
 
     function copyToClipboard(account_number) {
         navigator.clipboard.writeText(account_number).then(() => {
             message = '계좌번호가 복사되었습니다.';
+            message2 = account_number;
             show_message = true;
         });
     }

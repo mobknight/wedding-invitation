@@ -19,7 +19,7 @@
 <style>
     .message {
         position: fixed;
-        top: calc(100% - 8rem);
+        top: calc(100% - 10rem);
         left: calc(50% - 150px);
         width: 300px;
         height: auto;
